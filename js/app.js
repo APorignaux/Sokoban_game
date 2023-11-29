@@ -30,6 +30,8 @@ function initialise() {
     // turn off the keypress listener while a game is in progress
     $(window).off("keypress");
     document.onkeydown = keys;
+    alert('program enter here')
+    // comme vous pouvez le voir la fonction fonctionne jusqu'ici
     mapMaker();
 }
 // the function map maker go trough the maparray and define a plan that will help another function call makeSquare to create the visible map.
@@ -37,7 +39,10 @@ function mapMaker() {
     ctx.clearRect(0, 0, c.width, c.height);
     posX = 0;
     posY = 0;
+    alert('here it stop')
+    //le programme s'execute jusqu'ici ensuite lorsqu'il entre dans la boucle quelque chose se produit et le programme plante mais je ne parvient pas à trouver pourquoi.
     for (var i = 0; i < mapArray.length; i++) {
+        alert("it doesn't goes here")
         for (var j = 0; j < mapArray[i].length; j++) {
             if (mapArray[i][j] == "0") {
                 makeSquare(posX, posY, "green");
